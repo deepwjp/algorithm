@@ -11,16 +11,15 @@ import (
 //}
 
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
-	all := make([]int,cap(nums1)+cap(nums2))
-	all= append(nums1,nums2...)
+	all := make([]int, cap(nums1)+cap(nums2))
+	all = append(nums1, nums2...)
 
 	sort.Ints(all[:])
-	leng:= len(all)
-	if leng%2 == 0{
+	leng := len(all)
+	if leng%2 == 0 {
 
-		num:=float64(all[leng/2-1]+all[leng/2])/2.0
-		return  float64(num)
+		num := float64(all[leng/2-1]+all[leng/2]) / 2.0
+		return float64(num)
 	}
 	return float64(all[leng/2])
 }
-
